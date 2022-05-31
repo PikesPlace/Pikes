@@ -1,5 +1,8 @@
 package com.codeup.pikes.controllers;
 
+import com.codeup.pikes.repositories.BusinessRepository;
+import com.codeup.pikes.repositories.LocationRepository;
+import com.codeup.pikes.repositories.TicketRepository;
 import com.codeup.pikes.repositories.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -9,9 +12,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class UserController {
     private final UserRepository userDao;
+    private final BusinessRepository businessDao;
+    private final LocationRepository locationDao;
+    private final TicketRepository ticketDao;
 
-    public UserController(UserRepository userDao) {
+    public UserController(UserRepository userDao, BusinessRepository businessDao, LocationRepository locationDao, TicketRepository ticketDao) {
         this.userDao = userDao;
+        this.businessDao = businessDao;
+        this.locationDao = locationDao;
+        this.ticketDao = ticketDao;
     }
 
     @GetMapping("/")
