@@ -1,0 +1,15 @@
+#login{
+    text-align: center;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#homeAnchors{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
