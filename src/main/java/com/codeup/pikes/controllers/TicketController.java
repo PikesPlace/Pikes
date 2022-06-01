@@ -5,6 +5,7 @@ import com.codeup.pikes.repositories.LocationRepository;
 import com.codeup.pikes.repositories.TicketRepository;
 import com.codeup.pikes.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class TicketController {
@@ -19,4 +20,22 @@ public class TicketController {
         this.locationDao = locationDao;
         this.userDao = userDao;
     }
+
+    @GetMapping("/ticket1")
+    public String ticket1(){
+        return "ticket1";
+    }
+
+    @GetMapping("/ticket2")
+    public String ticket2(){
+        return "ticket2";
+    }
+
+    @GetMapping("/ticket3")
+    public String ticket3(){
+        return "ticket3";
+    }
+
+
+
 }
