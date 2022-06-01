@@ -36,6 +36,35 @@ public class TicketController {
         return "ticket3";
     }
 
+    @GetMapping("/ticket4")
+    public String ticket4(){
+        return "ticket4";
+    }
+
+    @GetMapping("/ticket5")
+    public String ticket5(){
+        return "ticket5";
+    }
+
+    @GetMapping("/ticket6")
+    public String ticket6(){
+        return "ticket6";
+    }
+
+    @GetMapping("/ticket7")
+    public String ticket7(){
+        return "ticket7";
+    }
+
+    @GetMapping("/ticket8")
+    public String ticket8(){
+        return "ticket8";
+    }
+
+    @GetMapping("/ticket9")
+    public String ticket9(){
+        return "ticket9";
+    }
 
 
 }
