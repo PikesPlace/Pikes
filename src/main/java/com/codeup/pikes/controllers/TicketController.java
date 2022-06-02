@@ -23,47 +23,47 @@ public class TicketController {
 
     @GetMapping("/ticket1")
     public String ticket1(){
-        return "ticket1";
+        return "ticket/ticket1";
     }
 
     @GetMapping("/ticket2")
     public String ticket2(){
-        return "ticket2";
+        return "ticket/ticket2";
     }
 
     @GetMapping("/ticket3")
     public String ticket3(){
-        return "ticket3";
+        return "ticket/ticket3";
     }
 
     @GetMapping("/ticket4")
     public String ticket4(){
-        return "ticket4";
+        return "ticket/ticket4";
     }
 
     @GetMapping("/ticket5")
     public String ticket5(){
-        return "ticket5";
+        return "ticket/ticket5";
     }
 
     @GetMapping("/ticket6")
     public String ticket6(){
-        return "ticket6";
+        return "ticket/ticket6";
     }
 
     @GetMapping("/ticket7")
     public String ticket7(){
-        return "ticket7";
+        return "ticket/ticket7";
     }
 
     @GetMapping("/ticket8")
     public String ticket8(){
-        return "ticket8";
+        return "ticket/ticket8";
     }
 
     @GetMapping("/ticket9")
     public String ticket9(){
-        return "ticket9";
+        return "ticket/ticket9";
     }
 
 

@@ -17,4 +17,5 @@ public class BusinessController {
         this.locationDao = locationDao;
         this.userDao = userDao;
     }
+
 }
