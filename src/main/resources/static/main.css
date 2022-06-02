@@ -1,6 +1,9 @@
 body{
     background-color: gray;
 }
+a{
+    color: red;
+}
 #login{
     text-align: center;
 }
