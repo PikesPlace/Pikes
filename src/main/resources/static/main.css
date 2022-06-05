@@ -4,6 +4,9 @@ body{
 a{
     color: red;
 }
+p{
+    color: black;
+}
 #login{
     text-align: center;
 }
