@@ -27,8 +27,8 @@
         <div class="col-lg-4 col-md-4 col-sm-12" th:each="business : ${businesses}">
             <div class="card mb-5">
                 <div class="card-body">
-                    <p th:text="${business.id}"></p>
                     <p th:text="${business.name}"></p>
+                    <a href="/bizLocations"><button type="button">See Locations</button> </a>
                 </div>
             </div>
         </div>
