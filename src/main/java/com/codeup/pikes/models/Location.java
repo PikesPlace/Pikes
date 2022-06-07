@@ -34,6 +34,8 @@ public class Location {
     @Column
     private String poc;
 
+
+
     public Location(){}
 
     public Location(long id, String name, String street, String city, String state, String zip, String phone, String email, String poc){
