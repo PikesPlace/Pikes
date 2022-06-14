@@ -33,7 +33,7 @@ public class Ticket {
     private String phoneNum;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "ticket_types", joinColumns = {@JoinColumn(name = "ticket_id")}, inverseJoinColumns = {@JoinColumn(name = "jobtype_id")})
+    @JoinTable(name = "ticket_type", joinColumns = {@JoinColumn(name = "ticket_id")}, inverseJoinColumns = {@JoinColumn(name = "jobType_id")})
     private List<JobType> jobTypes;
 
 
