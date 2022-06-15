@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" th:href="@{/main.css}">
+</head>
+<body>
+<h1>Tickets</h1>
+<div th:each="ticket : ${tickets}">
+    <p th:text="${ticket.date}"></p>
+    <p th:text="${ticket.ticketNum}"></p>
+</div>
+<hr>
+<h1>Business</h1>
+<div th:each="business : ${businesses}">
+    <p th:text="${business.id}"></p>
+    <p th:text="${business.name}"></p>
+</div>
+<hr>
+<h1>Locations</h1>
+<div th:each="location : ${locations}">
+    <p th:text="${location.id}"></p>
+    <p th:text="${location.name}"></p>
+    <p th:text="${location.phone}"></p>
+    <p th:text="${location.email}"></p>
+</div>
+<hr>
+<h1>Users</h1>
+<div th:each="user : ${users}">
+    <p th:text="${user.id}"></p>
+    <p th:text="${user.username}"></p>
+    <p th:text="${user.email}"></p>
+</div>
+</body>
+</html>
