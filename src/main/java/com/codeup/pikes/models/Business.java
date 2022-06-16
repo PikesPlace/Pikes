@@ -13,11 +13,15 @@ public class Business {
     @Column(nullable = false)
     private String name;
 
+    @OneToMany(mappedBy = "business")
+    private List<Location> locations;
+
     public Business(){}
 
-    public Business(long id, String name){
+    public Business(long id, String name, List<Location> locations){
         this.id = id;
         this.name = name;
+        this.locations = locations;
     }
 
 
@@ -35,5 +39,13 @@ public class Business {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Location> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(List<Location> locations) {
+        this.locations = locations;
     }
 }
