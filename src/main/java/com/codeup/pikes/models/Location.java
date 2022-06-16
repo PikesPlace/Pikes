@@ -34,11 +34,13 @@ public class Location {
     @Column
     private String poc;
 
-
+    @ManyToOne
+    @JoinColumn(name = "business_id")
+    private Business business;
 
     public Location(){}
 
-    public Location(long id, String name, String street, String city, String state, String zip, String phone, String email, String poc){
+    public Location(long id, String name, String street, String city, String state, String zip, String phone, String email, String poc, Business business){
         this.id = id;
         this.name = name;
         this.street = street;
@@ -48,6 +50,7 @@ public class Location {
         this.phone = phone;
         this.email = email;
         this.poc = poc;
+        this.business = business;
     }
 
 
@@ -121,5 +124,13 @@ public class Location {
 
     public void setPoc(String poc) {
         this.poc = poc;
+    }
+
+    public Business getBusiness() {
+        return business;
+    }
+
+    public void setBusiness(Business business) {
+        this.business = business;
     }
 }
