@@ -9,6 +9,12 @@
     <link rel="stylesheet" th:href="@{/main.css}">
 </head>
 <body>
-<a href="/ticket2"><button type="button">Next Page</button></a>
+
+<form id="ticketStart" th:action="@{/ticketStart}" method="post" th:object="${ticketObj}">
+    <input name="phoneNum" th:value="${phoneNum}">
+    <button id="submitTicketBtn" class="btn btn-green" type="submit" value="Submit Ticket">Submit
+    </button>
+</form>
+
 </body>
 </html>
