@@ -12,6 +12,7 @@ public class Ticket {
     private long id;
 
     @Column
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long ticketNum;
 
     @OneToOne
