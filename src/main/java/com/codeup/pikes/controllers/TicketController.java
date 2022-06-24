@@ -33,7 +33,7 @@ public class TicketController {
         return "ticket/ticket1";
     }
 
-    @PostMapping("/ticket/{id}")
+    @PostMapping("/ticketStart")
     public String ticketStart(@ModelAttribute Ticket ticket){
         ticketDao.save(ticket);
         return "ticket/ticket2";
