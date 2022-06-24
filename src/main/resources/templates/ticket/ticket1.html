@@ -11,7 +11,7 @@
 <body>
 
 <form id="ticketStart" th:action="@{/ticketStart}" method="post" th:object="${ticketObj}">
-    <input name="phoneNum" th:value="${phoneNum}">
+    <p>Enter Phone Num:<input name="phoneNum" th:value="${phoneNum}"></p>
     <button id="submitTicketBtn" class="btn btn-green" type="submit" value="Submit Ticket">Submit
     </button>
 </form>
