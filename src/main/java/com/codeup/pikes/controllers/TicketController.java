@@ -30,6 +30,7 @@ public class TicketController {
     public String ticket1(Model model){
         model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("ticketObj", new Ticket());
+        model.addAttribute("businesses", businessDao.findAll());
         return "ticket/ticket1";
     }
 
