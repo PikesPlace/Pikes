@@ -12,8 +12,8 @@
 
 <form id="ticketStart" th:action="@{/ticketStart}" method="post" th:object="${ticketObj}">
     <p>Select Business:</p>
-    <div th:each="business : ${businesses}">
-        <input type="checkbox" name="biz" th:text="${business.name}" th:value="${business.name}">
+    <div th:each="location : ${locations}">
+        <input type="checkbox" name="loc" th:text="${location.name}" th:value="${location.name}">
     </div>
     <p>Enter Phone Num:<input name="phoneNum" th:value="${phoneNum}"></p>
     <p>Enter Date:<input name="date" th:value="${date}"></p>
