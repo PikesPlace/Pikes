@@ -43,6 +43,12 @@ public class TicketController {
         return "ticket/ticket2";
     }
 
+    @GetMapping("/ticket2")
+    public String ticket2(Model model){
+
+        return "ticket/ticket2";
+    }
+
 
 
 
