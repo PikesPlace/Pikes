@@ -1,5 +1,6 @@
 package com.codeup.pikes.controllers;
 
+import com.codeup.pikes.models.Business;
 import com.codeup.pikes.models.Ticket;
 import com.codeup.pikes.repositories.BusinessRepository;
 import com.codeup.pikes.repositories.LocationRepository;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class TicketController {
@@ -35,7 +37,8 @@ public class TicketController {
     }
 
     @PostMapping("/ticketStart")
-    public String ticketStart(@ModelAttribute Ticket ticket){
+    public String ticketStart(@ModelAttribute Ticket ticket, @RequestParam("biz") String business){
+        ticket.setBusiness(businessDao.findByName(business));
         ticketDao.save(ticket);
         return "ticket/ticket2";
     }
