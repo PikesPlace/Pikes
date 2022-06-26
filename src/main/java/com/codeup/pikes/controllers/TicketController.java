@@ -32,13 +32,14 @@ public class TicketController {
     public String ticket1(Model model){
         model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("ticketObj", new Ticket());
-        model.addAttribute("businesses", businessDao.findAll());
+        model.addAttribute("locations", locationDao.findAll());
         return "ticket/ticket1";
     }
 
     @PostMapping("/ticketStart")
-    public String ticketStart(@ModelAttribute Ticket ticket, @RequestParam("biz") String business){
-        ticket.setBusiness(businessDao.findByName(business));
+    public String ticketStart(@ModelAttribute Ticket ticket, @RequestParam("loc") String location){
+        ticket.setLocation(locationDao.findByName(location));
+        ticket.setBusiness(locationDao.findByName(location).getBusiness());
         ticketDao.save(ticket);
         return "ticket/ticket2";
     }
