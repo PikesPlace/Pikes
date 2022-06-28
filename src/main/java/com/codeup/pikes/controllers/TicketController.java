@@ -2,10 +2,7 @@ package com.codeup.pikes.controllers;
 
 import com.codeup.pikes.models.Business;
 import com.codeup.pikes.models.Ticket;
-import com.codeup.pikes.repositories.BusinessRepository;
-import com.codeup.pikes.repositories.LocationRepository;
-import com.codeup.pikes.repositories.TicketRepository;
-import com.codeup.pikes.repositories.UserRepository;
+import com.codeup.pikes.repositories.*;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,12 +17,14 @@ public class TicketController {
     private final BusinessRepository businessDao;
     private final LocationRepository locationDao;
     private final UserRepository userDao;
+    private final JobTypeRepository jobTypeDao;
 
-    public TicketController(TicketRepository ticketDao, BusinessRepository businessDao, LocationRepository locationDao, UserRepository userDao){
+    public TicketController(TicketRepository ticketDao, BusinessRepository businessDao, LocationRepository locationDao, UserRepository userDao, JobTypeRepository jobTypeDao){
         this.ticketDao = ticketDao;
         this.businessDao = businessDao;
         this.locationDao = locationDao;
         this.userDao = userDao;
+        this.jobTypeDao = jobTypeDao;
     }
 
     @GetMapping("/ticket1")
@@ -33,18 +32,20 @@ public class TicketController {
         model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("ticketObj", new Ticket());
         model.addAttribute("locations", locationDao.findAll());
+        model.addAttribute("types", jobTypeDao.findAll());
         return "ticket/ticket1";
     }
 
     @PostMapping("/ticketStart")
-    public String ticketStart(@ModelAttribute Ticket ticket, @RequestParam("loc") String location){
+    public String ticketStart(@ModelAttribute Ticket ticket, @RequestParam("loc") String location, @RequestParam("type") String type){
         ticket.setLocation(locationDao.findByName(location));
         ticket.setBusiness(locationDao.findByName(location).getBusiness());
+        ticket.setType(type);
         ticketDao.save(ticket);
-        return "ticket/ticket2";
+        return "redirect:/ticket2/" + ticket.getId();
     }
 
-    @GetMapping("/ticket2")
+    @GetMapping("/ticket2/{id}")
     public String ticket2(Model model){
 
         return "ticket/ticket2";
