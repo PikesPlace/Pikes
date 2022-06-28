@@ -33,9 +33,12 @@ public class Ticket {
     @Column
     private String phoneNum;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "ticket_type", joinColumns = {@JoinColumn(name = "ticket_id")}, inverseJoinColumns = {@JoinColumn(name = "jobType_id")})
-    private List<JobType> jobTypes;
+    @Column
+    private String type;
+
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "ticket_type", joinColumns = {@JoinColumn(name = "ticket_id")}, inverseJoinColumns = {@JoinColumn(name = "jobType_id")})
+//    private List<JobType> jobTypes;
 
 
     public Ticket(){}
@@ -48,13 +51,13 @@ public class Ticket {
         this.id = id;
     }
 
-    public List<JobType> getJobTypes() {
-        return jobTypes;
-    }
-
-    public void setJobTypes(List<JobType> jobTypes) {
-        this.jobTypes = jobTypes;
-    }
+//    public List<JobType> getJobTypes() {
+//        return jobTypes;
+//    }
+//
+//    public void setJobTypes(List<JobType> jobTypes) {
+//        this.jobTypes = jobTypes;
+//    }
 
     public Long getTicketNum() {
         return ticketNum;
@@ -110,5 +113,13 @@ public class Ticket {
 
     public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
