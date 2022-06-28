@@ -15,6 +15,12 @@
     <div th:each="location : ${locations}">
         <input type="checkbox" name="loc" th:text="${location.name}" th:value="${location.name}">
     </div>
+    <br>
+    <p>Select ticket type:</p>
+    <div th:each="type : ${types}">
+        <input name="type" type="checkbox" th:text="${type.name}" th:value="${type.name}">
+    </div>
+    <br>
     <p>Enter Phone Num:<input name="phoneNum" th:value="${phoneNum}"></p>
     <p>Enter Today's Date:<input type="date" name="date" th:value="${date}"></p>
     <p>Enter Ordered Date:<input type="date" name="dateOrdered" th:value="${dateOrdered}"></p>
