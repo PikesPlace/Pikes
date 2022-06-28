@@ -22,13 +22,13 @@ public class Ticket {
     private Business business;
 
     @Column
-    private Date date;
+    private String date;
 
     @Column
-    private Date dateOrdered;
+    private String dateOrdered;
 
     @Column
-    private Date dateScheduled;
+    private String dateScheduled;
 
     @Column
     private String phoneNum;
@@ -80,27 +80,27 @@ public class Ticket {
         this.business = business;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Date getDateOrdered() {
+    public String getDateOrdered() {
         return dateOrdered;
     }
 
-    public void setDateOrdered(Date dateOrdered) {
+    public void setDateOrdered(String dateOrdered) {
         this.dateOrdered = dateOrdered;
     }
 
-    public Date getDateScheduled() {
+    public String getDateScheduled() {
         return dateScheduled;
     }
 
-    public void setDateScheduled(Date dateScheduled) {
+    public void setDateScheduled(String dateScheduled) {
         this.dateScheduled = dateScheduled;
     }
 
