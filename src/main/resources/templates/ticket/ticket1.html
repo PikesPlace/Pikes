@@ -16,10 +16,9 @@
         <input type="checkbox" name="loc" th:text="${location.name}" th:value="${location.name}">
     </div>
     <p>Enter Phone Num:<input name="phoneNum" th:value="${phoneNum}"></p>
-<!--    Find date type that enters in format 00/00/00-->
-    <p>Enter Date: 00/00/00<input name="date" th:value="${date}"></p>
-    <p>Enter Date:<input name="dateOrdered" th:value="${dateOrdered}"></p>
-    <p>Enter Date:<input name="dateScheduled" th:value="${dateScheduled}"></p>
+    <p>Enter Today's Date:<input type="date" name="date" th:value="${date}"></p>
+    <p>Enter Ordered Date:<input type="date" name="dateOrdered" th:value="${dateOrdered}"></p>
+    <p>Enter Scheduked Date:<input type="date" name="dateScheduled" th:value="${dateScheduled}"></p>
 
     <button id="submitTicketBtn" class="btn btn-green" type="submit" value="Submit Ticket">Submit
     </button>
