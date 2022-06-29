@@ -2,6 +2,7 @@ package com.codeup.pikes.controllers;
 
 import com.codeup.pikes.models.Business;
 import com.codeup.pikes.models.Ticket;
+import com.codeup.pikes.models.User;
 import com.codeup.pikes.repositories.*;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -37,10 +38,11 @@ public class TicketController {
     }
 
     @PostMapping("/ticketStart")
-    public String ticketStart(@ModelAttribute Ticket ticket, @RequestParam("loc") String location, @RequestParam("type") String type){
+    public String ticketStart(@ModelAttribute Ticket ticket, @RequestParam("loc") String location, @RequestParam("type") String type, @RequestParam("user") String username){
         ticket.setLocation(locationDao.findByName(location));
         ticket.setBusiness(locationDao.findByName(location).getBusiness());
         ticket.setType(type);
+//        ticket.setUser(userDao.findByUsername(username));
         ticketDao.save(ticket);
         return "redirect:/ticket2/" + ticket.getId();
     }
