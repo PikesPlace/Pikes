@@ -1,8 +1,6 @@
 package com.codeup.pikes.models;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "tickets")
@@ -21,6 +19,9 @@ public class Ticket {
     @OneToOne
     private Business business;
 
+    @OneToOne
+    private User user;
+
     @Column
     private String date;
 
@@ -35,6 +36,10 @@ public class Ticket {
 
     @Column
     private String type;
+
+
+
+
 
 //    @ManyToMany(cascade = CascadeType.ALL)
 //    @JoinTable(name = "ticket_type", joinColumns = {@JoinColumn(name = "ticket_id")}, inverseJoinColumns = {@JoinColumn(name = "jobType_id")})
@@ -121,5 +126,13 @@ public class Ticket {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
