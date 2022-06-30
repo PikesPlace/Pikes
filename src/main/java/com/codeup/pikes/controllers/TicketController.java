@@ -42,7 +42,7 @@ public class TicketController {
         ticket.setLocation(locationDao.findByName(location));
         ticket.setBusiness(locationDao.findByName(location).getBusiness());
         ticket.setType(type);
-//        ticket.setUser(userDao.findByUsername(username));
+        ticket.setUser(userDao.findByUsername(username));
         ticketDao.save(ticket);
         return "redirect:/ticket2/" + ticket.getId();
     }
