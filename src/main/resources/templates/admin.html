@@ -11,29 +11,49 @@
 <body>
 <h1>Tickets</h1>
 <div th:each="ticket : ${tickets}">
-    <p th:text="${ticket.date}"></p>
-    <p th:text="${ticket.ticketNum}"></p>
+    <ul>
+    <p><li th:text="${ticket.id}"></li></p>
+    <li th:text="${ticket.date}"></li>
+    <li th:text="${ticket.dateOrdered}"></li>
+    <li th:text="${ticket.dateScheduled}"></li>
+    <li th:text="${ticket.phoneNum}"></li>
+    <li th:text="${ticket.ticketNum}"></li>
+    <li th:text="${ticket.type}"></li>
+    <li th:text="${ticket.business}"></li>
+    <li th:text="${ticket.location}"></li>
+    <li th:text="${ticket.user}"></li>
+    </ul>
+    <br>
 </div>
 <hr>
 <h1>Business</h1>
 <div th:each="business : ${businesses}">
-    <p th:text="${business.id}"></p>
-    <p th:text="${business.name}"></p>
+    <ul>
+    <li th:text="${business.id}"></li>
+    <li th:text="${business.name}"></li>
+    </ul>
+    <br>
 </div>
 <hr>
 <h1>Locations</h1>
 <div th:each="location : ${locations}">
-    <p th:text="${location.id}"></p>
-    <p th:text="${location.name}"></p>
-    <p th:text="${location.phone}"></p>
-    <p th:text="${location.email}"></p>
+    <ul>
+    <li th:text="${location.id}"></li>
+    <li th:text="${location.name}"></li>
+    <li th:text="${location.phone}"></li>
+    <li th:text="${location.email}"></li>
+    </ul>
+    <br>
 </div>
 <hr>
 <h1>Users</h1>
 <div th:each="user : ${users}">
-    <p th:text="${user.id}"></p>
-    <p th:text="${user.username}"></p>
-    <p th:text="${user.email}"></p>
+    <ul>
+    <li th:text="${user.id}"></li>
+    <li th:text="${user.username}"></li>
+    <li th:text="${user.email}"></li>
+    </ul>
+    <br>
 </div>
 </body>
 </html>
