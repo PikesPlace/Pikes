@@ -12,7 +12,7 @@
 
 <form id="ticketStart" th:action="@{/ticketStart}" method="post" th:object="${ticketObj}">
     <input hidden name="user" th:text="${user.username}" th:value="${user.username}">
-    <p>Select Business:</p>
+    <p>Select Locaiton:</p>
     <div th:each="location : ${locations}">
         <input type="checkbox" name="loc" th:text="${location.name}" th:value="${location.name}">
     </div>

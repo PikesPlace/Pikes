@@ -40,7 +40,7 @@
     <p>Zip : <input name="zip"></p>
     <p>Select Business Name : </p>
     <div th:each="business : ${businesses}">
-        <input type="checkbox" name="business" th:text="${business.name}">
+        <input type="checkbox" name="business" th:value="${business.id}" th:text="${business.name}">
     </div>
     <button class="btn btn-green" type="submit">Make New Location</button>
 </form>

@@ -65,9 +65,9 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-    @PostMapping("/adminAddLocation ")
-    public String adminAddLocation (@ModelAttribute Location location, @RequestParam ("name") String name, @RequestParam ("email") String email, @RequestParam ("phone") String phone, @RequestParam ("poc") String poc, @RequestParam ("street") String street, @RequestParam ("city") String city, @RequestParam ("state") String state, @RequestParam ("zip") String zip, @RequestParam ("business") String business){
-        location.setBusiness(businessDao.findByName(business));
+    @PostMapping("/adminAddLocation")
+    public String adminAddLocation (@ModelAttribute Location location, @RequestParam ("name") String name, @RequestParam ("email") String email, @RequestParam ("phone") String phone, @RequestParam ("poc") String poc, @RequestParam ("street") String street, @RequestParam ("city") String city, @RequestParam ("state") String state, @RequestParam ("zip") String zip, @RequestParam ("business") Long business){
+        location.setBusiness(businessDao.getById(business));
         location.setName(name);
         location.setEmail(email);
         location.setPhone(phone);
