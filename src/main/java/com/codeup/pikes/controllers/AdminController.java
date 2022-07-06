@@ -49,12 +49,13 @@ public class AdminController {
     }
 
     @PostMapping("/adminAddUser")
-    public String adminAddUser(@ModelAttribute User user, @RequestParam ("isAdmin") Boolean isAdmin, @RequestParam ("email") String email, @RequestParam ("pass") String pass){
+    public String adminAddUser(@ModelAttribute User user, @RequestParam ("isAdmin") Boolean isAdmin, @RequestParam ("email") String email, @RequestParam ("pass") String pass, @RequestParam ("username") String username){
+        user.setUsername(username);
         user.setPassword(pass);
         user.setEmail(email);
         user.setAdmin(isAdmin);
         userDao.save(user);
-        return "admin";
+        return "reidrect:/admin";
     }
 
 
