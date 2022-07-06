@@ -55,8 +55,28 @@ public class AdminController {
         user.setEmail(email);
         user.setAdmin(isAdmin);
         userDao.save(user);
-        return "reidrect:/admin";
+        return "redirect:/admin";
     }
 
+    @PostMapping("/adminAddBusiness")
+    public String adminAddBusiness (@ModelAttribute Business business, @RequestParam ("name") String name){
+        business.setName(name);
+        businessDao.save(business);
+        return "redirect:/admin";
+    }
 
+    @PostMapping("/adminAddLocation ")
+    public String adminAddLocation (@ModelAttribute Location location, @RequestParam ("name") String name, @RequestParam ("email") String email, @RequestParam ("phone") String phone, @RequestParam ("poc") String poc, @RequestParam ("street") String street, @RequestParam ("city") String city, @RequestParam ("state") String state, @RequestParam ("zip") String zip, @RequestParam ("business") String business){
+        location.setBusiness(businessDao.findByName(business));
+        location.setName(name);
+        location.setEmail(email);
+        location.setPhone(phone);
+        location.setPoc(poc);
+        location.setStreet(street);
+        location.setCity(city);
+        location.setState(state);
+        location.setZip(zip);
+        locationDao.save(location);
+        return "redirect:/admin";
+    }
 }

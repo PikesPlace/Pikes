@@ -11,7 +11,7 @@
 <body>
 
 <h1>Add user</h1>
-<form id="adminAdd" method="post" th:action="@{/adminAddUser}" th:object="${newUser}">
+<form id="adminAddUser" method="post" th:action="@{/adminAddUser}">
     <p>Add admin access ?
         <input th:text="Yes" name="isAdmin" type="checkbox" value="true">
         <input th:text="No" name="isAdmin" type="checkbox" value="false">
@@ -20,6 +20,26 @@
     <p>Email : <input name="email"></p>
     <p>Password : <input name="pass"></p>
     <button class="btn btn-green" type="submit">Make New User</button>
+</form>
+
+<h1>Add Business</h1>
+<form id="adminAddBusiness" method="post" th:action="@{/adminAddBusiness}">
+    <p>Business name : <input name="name"></p>
+</form>
+
+<h1>Add Location</h1>
+<form id="adminAddLocation" method="post" th:action="@{/adminAddLocation}">
+    <p>Name : <input name="name"></p>
+    <p>Email : <input name="email"></p>
+    <p>Phone : <input name="phone"></p>
+    <p>POC : <input name="poc"></p>
+    <p>Street : <input name="street"></p>
+    <p>City : <input name="city"></p>
+    <p>State : <input name="state"></p>
+    <p>Zip : <input name="zip"></p>
+    <div th:each="business : ${businesses}">
+        <input type="checkbox" name="business" th:text="${business.name}">
+    </div>
 </form>
 
 </body>
