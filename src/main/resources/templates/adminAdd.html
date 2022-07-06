@@ -37,6 +37,7 @@
     <p>City : <input name="city"></p>
     <p>State : <input name="state"></p>
     <p>Zip : <input name="zip"></p>
+    <p>Select Business Name : </p>
     <div th:each="business : ${businesses}">
         <input type="checkbox" name="business" th:text="${business.name}">
     </div>
