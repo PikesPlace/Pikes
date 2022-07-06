@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Add Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" th:href="@{/main.css}">
+</head>
+<body>
+
+<h1>Add user</h1>
+<form id="adminAdd" method="post" th:action="@{/adminAddUser}" th:object="${newUser}">
+    <p>Add admin access ?
+        <input th:text="Yes" name="isAdmin" type="checkbox" value="true">
+        <input th:text="No" name="isAdmin" type="checkbox" value="false">
+    </p>
+    <p>Username : <input th:value="${username}"></p>
+    <p>Email : <input name="email"></p>
+    <p>Password : <input name="pass"></p>
+    <button class="btn btn-green" type="submit">Make New User</button>
+</form>
+
+</body>
+</html>
