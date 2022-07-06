@@ -1,6 +1,7 @@
 package com.codeup.pikes.controllers;
 
 import com.codeup.pikes.models.Business;
+import com.codeup.pikes.models.Location;
 import com.codeup.pikes.models.Ticket;
 import com.codeup.pikes.models.User;
 import com.codeup.pikes.repositories.*;
@@ -52,6 +53,8 @@ public class TicketController {
 
         return "ticket/ticket2";
     }
+
+
 
 
 
