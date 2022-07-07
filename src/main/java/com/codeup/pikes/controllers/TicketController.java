@@ -39,11 +39,11 @@ public class TicketController {
     }
 
     @PostMapping("/ticketStart")
-    public String ticketStart(@ModelAttribute Ticket ticket, @RequestParam("loc") String location, @RequestParam("type") String type, @RequestParam("user") String username){
+    public String ticketStart(@ModelAttribute Ticket ticket, @RequestParam("loc") String location, @RequestParam("type") String type, @RequestParam("user") Long id){
         ticket.setLocation(locationDao.findByName(location));
         ticket.setBusiness(locationDao.findByName(location).getBusiness());
         ticket.setType(type);
-        ticket.setUser(userDao.findByUsername(username));
+        ticket.setUser(userDao.getById(id));
         ticketDao.save(ticket);
         return "redirect:/ticket2/" + ticket.getId();
     }
