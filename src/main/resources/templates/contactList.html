@@ -28,7 +28,9 @@
             <div class="card mb-5">
                 <div class="card-body">
                     <p th:text="${business.name}"></p>
-                    <a href="/bizLocations"><button type="button">See Locations</button> </a>
+                    <form th:action="@{/bizLocations/{id}(id=${business.id})}">
+                        <button type="submit">See Locations</button>
+                    </form>
                 </div>
             </div>
         </div>
