@@ -40,7 +40,7 @@ public class BusinessController {
 
     @GetMapping("/bizLocations/{id}")
     public String bizLocations(@PathVariable Long id, Model model){
-//        model.addAttribute("locations", businessDao.findLocations(id));
+        model.addAttribute("locations", locationDao.findLocations(id));
         return "/bizLocations";
     }
 }
