@@ -12,48 +12,40 @@
 
 <h1>Tickets</h1>
 <div th:each="ticket : ${tickets}">
-    <ul>
-    <p><li th:text="${ticket.id}"></li></p>
-    <li th:text="${ticket.date}"></li>
-    <li th:text="${ticket.dateOrdered}"></li>
-    <li th:text="${ticket.dateScheduled}"></li>
-    <li th:text="${ticket.phoneNum}"></li>
-    <li th:text="${ticket.ticketNum}"></li>
-    <li th:text="${ticket.type}"></li>
-    <li th:text="${ticket.business}"></li>
-    <li th:text="${ticket.location}"></li>
-    <li th:text="${ticket.user}"></li>
-    </ul>
+    <p>ID = <span th:text="${ticket.id}"></span></p>
+    <p>Date = <span th:text="${ticket.date}"></span></p>
+    <p>Ordered Date = <span th:text="${ticket.dateOrdered}"></span></p>
+    <p>Scheduled Date = <span th:text="${ticket.dateScheduled}"></span></p>
+    <p>Phone = <span th:text="${ticket.phoneNum}"></span></p>
+    <p>Ticket Num = <span th:text="${ticket.ticketNum}"></span></p>
+    <p>Ticket Type = <span th:text="${ticket.type}"></span></p>
+    <p>Business Name = <span th:text="${ticket.business.name}"></span></p>
+    <p>Ticket Location Name = <span th:text="${ticket.location.name}"></span></p>
+    <p>User = <span th:text="${ticket.user}"></span></p>
     <br>
 </div>
 <hr>
 <h1>Business</h1>
 <div th:each="business : ${businesses}">
-    <ul>
-    <li th:text="${business.id}"></li>
-    <li th:text="${business.name}"></li>
-    </ul>
+    <p>Business ID = <span th:text="${business.id}"></span></p>
+    <p>Business Name = <span th:text="${business.name}"></span></p>
     <br>
 </div>
 <hr>
 <h1>Locations</h1>
 <div th:each="location : ${locations}">
-    <ul>
-    <li th:text="${location.id}"></li>
-    <li th:text="${location.name}"></li>
-    <li th:text="${location.phone}"></li>
-    <li th:text="${location.email}"></li>
-    </ul>
+    <p>Location ID = <span th:text="${location.id}"></span></p>
+    <p>Name = <span th:text="${location.name}"></span></p>
+    <p>Phone = <span th:text="${location.phone}"></span></p>
+    <p>Email = <span th:text="${location.email}"></span></p>
     <br>
 </div>
 <hr>
 <h1>Users</h1>
 <div th:each="user : ${users}">
-    <ul>
-    <li th:text="${user.id}"></li>
-    <li th:text="${user.username}"></li>
-    <li th:text="${user.email}"></li>
-    </ul>
+    <p>User ID = <span th:text="${user.id}"></span></p>
+    <p>Username = <span th:text="${user.username}"></span></p>
+    <p>Email = <span th:text="${user.email}"></span></p>
     <br>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
