@@ -18,7 +18,7 @@ public class TicketController {
     private final UserRepository userDao;
     private final JobTypeRepository jobTypeDao;
 
-    public TicketController(TicketRepository ticketDao, BusinessRepository businessDao, LocationRepository locationDao, UserRepository userDao, JobTypeRepository jobTypeDao){
+    public TicketController(TicketRepository ticketDao, BusinessRepository businessDao, LocationRepository locationDao, UserRepository userDao, JobTypeRepository jobTypeDao) {
         this.ticketDao = ticketDao;
         this.businessDao = businessDao;
         this.locationDao = locationDao;
@@ -26,16 +26,16 @@ public class TicketController {
         this.jobTypeDao = jobTypeDao;
     }
 
-//    Cancel ticket
+    //    Cancel ticket
     @PostMapping("/cancelTicket")
-    public String cancelTicket(@RequestParam("cancelId") Long id){
+    public String cancelTicket(@RequestParam("cancelId") Long id) {
         ticketDao.deleteById(id);
         return "/home";
     }
 
-//    Page 1
+    //    Page 1
     @GetMapping("/ticket1")
-    public String ticket1(Model model){
+    public String ticket1(Model model) {
         model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("ticketObj", new Ticket());
         model.addAttribute("locations", locationDao.findAll());
@@ -44,7 +44,7 @@ public class TicketController {
     }
 
     @PostMapping("/ticketStart")
-    public String ticketStart(@ModelAttribute Ticket ticket, @RequestParam("loc") String location, @RequestParam("type") String type, @RequestParam("user") Long id){
+    public String ticketStart(@ModelAttribute Ticket ticket, @RequestParam("loc") String location, @RequestParam("type") String type, @RequestParam("user") Long id) {
         ticket.setLocation(locationDao.findByName(location));
         ticket.setBusiness(locationDao.findByName(location).getBusiness());
         ticket.setType(type);
@@ -53,66 +53,69 @@ public class TicketController {
         return "redirect:/ticket2/" + ticket.getId();
     }
 
-//    Page 2
+    //    Page 2
     @GetMapping("/ticket2/{id}")
-    public String ticket2(Model model, @PathVariable Long id){
+    public String ticket2(Model model, @PathVariable Long id) {
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("ticket", ticketDao.getById(id));
         return "ticket/ticket2";
     }
 
-//    Page 3
+    //    Page 3
     @GetMapping("/ticket3/{id}")
-    public String ticket3(Model model, @PathVariable Long id){
+    public String ticket3(Model model, @PathVariable Long id) {
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("ticket", ticketDao.getById(id));
         return "ticket/ticket3";
     }
 
-//    Page 4
+    //    Page 4
     @GetMapping("/ticket4/{id}")
-    public String ticket4(Model model, @PathVariable Long id){
+    public String ticket4(Model model, @PathVariable Long id) {
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("ticket", ticketDao.getById(id));
         return "ticket/ticket4";
     }
 
-//    Page 5
+    //    Page 5
     @GetMapping("/ticket5/{id}")
-    public String ticket5(Model model, @PathVariable Long id){
+    public String ticket5(Model model, @PathVariable Long id) {
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("ticket", ticketDao.getById(id));
         return "ticket/ticket5";
     }
 
-//    Page 6
+    //    Page 6
     @GetMapping("/ticket6/{id}")
-    public String ticket6(Model model, @PathVariable Long id){
+    public String ticket6(Model model, @PathVariable Long id) {
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("ticket", ticketDao.getById(id));
         return "ticket/ticket6";
     }
 
-//    Page 7
+    //    Page 7
     @GetMapping("/ticket7/{id}")
-    public String ticket7(Model model, @PathVariable Long id){
+    public String ticket7(Model model, @PathVariable Long id) {
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("ticket", ticketDao.getById(id));
         return "ticket/ticket7";
     }
 
-//    Page 8
+    //    Page 8
     @GetMapping("/ticket8/{id}")
-    public String ticket8(Model model, @PathVariable Long id){
+    public String ticket8(Model model, @PathVariable Long id) {
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("ticket", ticketDao.getById(id));
         return "ticket/ticket8";
     }
 
-//    Page 9
+    //    Page 9
     @GetMapping("/ticket9/{id}")
-    public String ticket9(Model model, @PathVariable Long id){
+    public String ticket9(Model model, @PathVariable Long id) {
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("ticket", ticketDao.getById(id));
         return "ticket/ticket9";
     }
-
-
-
-
-
 
 
 }
