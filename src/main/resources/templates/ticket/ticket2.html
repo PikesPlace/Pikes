@@ -9,13 +9,16 @@
 <body>
 <h2>Section 2</h2>
 
+<form id="ticket2" th:action="@{/ticket2End}" method="post" th:object="${ticketObj}">
+
+    <button id="submitTicketBtn" class="btn btn-submit" type="submit" value="Submit Ticket">Next Page
+    </button>
+</form>
 
 
-
-<a href="/ticket3"><button class="btn btn-primary" type="button">Next Page</button></a>
 
 <form th:action="@{/cancelTicket}" method="post">
-    <input name="cancelId" hidden th:value="${ticket.id}">
+    <input name="cancelId" hidden th:value="${ticketObj.id}">
     <button class="btn btn-danger" type="submit">Cancel Ticket</button>
 </form>
 <div th:replace="partials :: scripts"></div>

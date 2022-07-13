@@ -8,10 +8,14 @@
 </head>
 <body>
 
-<a href="/home"><button class="btn btn-primary" type="button">Finalize Ticket</button></a>
+<form id="ticket9" th:action="@{/ticket9End}" method="post" th:object="${ticketObj}">
+
+    <button id="submitTicketBtn" class="btn btn-submit" type="submit" value="Submit Ticket">Next Page
+    </button>
+</form>
 
 <form th:action="@{/cancelTicket}" method="post">
-    <input hidden th:value="${ticket.id}">
+    <input hidden th:value="${ticketObj.id}">
     <button class="btn btn-danger" type="submit">Cancel Ticket</button>
 </form>
 <div th:replace="partials :: scripts"></div>
