@@ -25,9 +25,12 @@
     <p>Enter Ordered Date:<input type="date" name="dateOrdered" th:value="${dateOrdered}"></p>
     <p>Enter Scheduked Date:<input type="date" name="dateScheduled" th:value="${dateScheduled}"></p>
 
-    <button id="submitTicketBtn" class="btn btn-submit" type="submit" value="Submit Ticket">Next Page
+    <button id="submitTicketBtn" class="btn btn-success" type="submit" value="Submit Ticket">Next Page
     </button>
 </form>
+
+<a th:href="@{/home}"><button class="btn btn-danger" type="button">Cancel Ticket</button></a>
+
 <div th:replace="partials :: scripts"></div>
 </body>
 </html>

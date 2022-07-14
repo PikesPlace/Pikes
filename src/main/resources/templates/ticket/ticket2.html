@@ -9,9 +9,13 @@
 <body>
 <h2>Section 2</h2>
 
-<form id="ticket2" th:action="@{/ticket2End}" method="post" th:object="${ticketObj}">
 
-    <button id="submitTicketBtn" class="btn btn-submit" type="submit" value="Submit Ticket">Next Page
+<form id="ticket2" th:action="@{/ticket2End}" method="post">
+<input hidden name="ticketId" th:value="${ticketObj.id}">
+
+
+
+    <button id="submitTicketBtn" class="btn btn-success" type="submit" value="Submit Ticket">Next Page
     </button>
 </form>
 

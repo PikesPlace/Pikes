@@ -7,10 +7,12 @@
     <link rel="stylesheet" th:href="@{/main.css}">
 </head>
 <body>
+<h2>Section 8</h2>
 
-<form id="ticket8" th:action="@{/ticket8End}" method="post" th:object="${ticketObj}">
+<form id="ticket8" th:action="@{/ticket8End}" method="post">
+    <input hidden name="ticketId" th:value="${ticketObj.id}">
 
-    <button id="submitTicketBtn" class="btn btn-submit" type="submit" value="Submit Ticket">Next Page
+    <button id="submitTicketBtn" class="btn btn-success" type="submit" value="Submit Ticket">Next Page
     </button>
 </form>
 
