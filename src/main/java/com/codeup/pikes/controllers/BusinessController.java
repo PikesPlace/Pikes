@@ -40,6 +40,7 @@ public class BusinessController {
 
     @GetMapping("/bizLocations/{id}")
     public String bizLocations(@PathVariable Long id, Model model){
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("locations", locationDao.findLocations(id));
         return "/bizLocations";
     }
