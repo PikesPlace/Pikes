@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket 1</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/main.css}">
+    <div th:replace="partials :: links"></div>
 </head>
 <body>
-
+<!---->
+<div th:replace="partials :: loggedNav"></div>
+<!---->
 <form id="ticketStart" th:action="@{/ticketStart}" method="post" th:object="${ticketObj}">
     <input hidden name="user" th:value="${user.id}">
     <p>Select Locaiton:</p>
@@ -20,17 +21,19 @@
         <input name="type" type="checkbox" th:text="${type.name}" th:value="${type.name}">
     </div>
     <br>
-    <p>Enter Phone Num:<input name="phoneNum" th:value="${phoneNum}"></p>
-    <p>Enter Today's Date:<input type="date" name="date" th:value="${date}"></p>
-    <p>Enter Ordered Date:<input type="date" name="dateOrdered" th:value="${dateOrdered}"></p>
-    <p>Enter Scheduked Date:<input type="date" name="dateScheduled" th:value="${dateScheduled}"></p>
-
+    <p>Enter Phone Num:<input required name="phoneNum" th:value="${phoneNum}"></p>
+    <p>Enter Today's Date:<input required type="date" name="date" th:value="${date}"></p>
+    <p>Enter Ordered Date:<input required type="date" name="dateOrdered" th:value="${dateOrdered}"></p>
+    <p>Enter Scheduked Date:<input required type="date" name="dateScheduled" th:value="${dateScheduled}"></p>
     <button id="submitTicketBtn" class="btn btn-success" type="submit" value="Submit Ticket">Next Page
     </button>
 </form>
-
-<a th:href="@{/home}"><button class="btn btn-danger" type="button">Cancel Ticket</button></a>
-
+<!---->
+<a th:href="@{/home}">
+    <button class="btn btn-danger" type="button">Cancel Ticket</button>
+</a>
+<!---->
 <div th:replace="partials :: scripts"></div>
+<!---->
 </body>
 </html>
