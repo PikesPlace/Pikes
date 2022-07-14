@@ -4,3 +4,6 @@ body {
 a{
     color: black;
 }
+#loggedNav{
+    background-color: red;
+}
