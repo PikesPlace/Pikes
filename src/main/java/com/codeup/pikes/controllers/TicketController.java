@@ -177,7 +177,6 @@ public class TicketController {
     @PostMapping("/ticket9End")
     public String ticket9End(@RequestParam("ticketId") Long id){
         Ticket ticket = ticketDao.getById(id);
-
         ticketDao.save(ticket);
         return "redirect:/home";
     }

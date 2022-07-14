@@ -39,13 +39,6 @@ public class Ticket {
 
 
 
-
-
-//    @ManyToMany(cascade = CascadeType.ALL)
-//    @JoinTable(name = "ticket_type", joinColumns = {@JoinColumn(name = "ticket_id")}, inverseJoinColumns = {@JoinColumn(name = "jobType_id")})
-//    private List<JobType> jobTypes;
-
-
     public Ticket(){}
 
     public long getId() {
@@ -55,14 +48,6 @@ public class Ticket {
     public void setId(long id) {
         this.id = id;
     }
-
-//    public List<JobType> getJobTypes() {
-//        return jobTypes;
-//    }
-//
-//    public void setJobTypes(List<JobType> jobTypes) {
-//        this.jobTypes = jobTypes;
-//    }
 
     public Long getTicketNum() {
         return ticketNum;
