@@ -13,28 +13,28 @@
         <input th:text="Yes" name="isAdmin" type="checkbox" value="true">
         <input th:text="No" name="isAdmin" type="checkbox" value="false">
     </p>
-    <p>Username : <input name="username"></p>
-    <p>Email : <input name="email"></p>
-    <p>Password : <input name="pass"></p>
+    <p>Username : <input required name="username"></p>
+    <p>Email : <input required name="email"></p>
+    <p>Password : <input required name="pass"></p>
     <button class="btn btn-success" type="submit">Make New User</button>
 </form>
 <!---->
 <h1>Add Business</h1>
 <form id="adminAddBusiness" method="post" th:action="@{/adminAddBusiness}">
-    <p>Business name : <input name="name"></p>
+    <p>Business name : <input required name="name"></p>
     <button class="btn btn-success" type="submit">Make New Business</button>
 </form>
 <!---->
 <h1>Add Location</h1>
 <form id="adminAddLocation" method="post" th:action="@{/adminAddLocation}">
-    <p>Name : <input name="name"></p>
-    <p>Email : <input name="email"></p>
-    <p>Phone : <input name="phone"></p>
-    <p>POC : <input name="poc"></p>
-    <p>Street : <input name="street"></p>
-    <p>City : <input name="city"></p>
-    <p>State : <input name="state"></p>
-    <p>Zip : <input name="zip"></p>
+    <p>Name : <input required name="name"></p>
+    <p>Email : <input required name="email"></p>
+    <p>Phone : <input required name="phone"></p>
+    <p>POC : <input required name="poc"></p>
+    <p>Street : <input required name="street"></p>
+    <p>City : <input required name="city"></p>
+    <p>State : <input required name="state"></p>
+    <p>Zip : <input required name="zip"></p>
     <p>Select Business Name : </p>
     <div th:each="business : ${businesses}">
         <input type="checkbox" name="business" th:value="${business.id}" th:text="${business.name}">
