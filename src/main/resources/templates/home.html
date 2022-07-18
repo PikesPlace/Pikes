@@ -10,13 +10,13 @@
 <div th:replace="partials :: loggedNav"></div>
 <!--NAVIGATION ANCHORS-->
 <div id="homeAnchors">
-    <a href="#">Time Sheet?</a>
+    <a th:href="@{/timeSheet}"><button class="btn btn-primary">Time Sheet?</button></a>
     <br>
-    <a href="/ticket1">Start Ticket</a>
+    <a th:href="@{/ticket1}"><button class="btn btn-success">Start Ticket</button></a>
     <br>
-    <a href="/contactList">Contact List</a>
+    <a th:href="@{/contactList}"><button class="btn btn-warning">Contact List</button></a>
     <br>
-    <a href="/admin">Admin Page</a>
+    <a th:href="@{/admin}"><button class="btn btn-danger">Admin Page</button></a>
 </div>
 <!--SCRIPTS PARTIAL-->
 <div th:replace="partials :: scripts"></div>
