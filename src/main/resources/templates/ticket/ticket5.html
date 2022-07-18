@@ -11,10 +11,15 @@
 <!---->
 <h2>Section 5</h2>
 <!---->
+<form id="backToTicket4" th:action="@{/backToTicket4}" method="post">
+    <input hidden name="ticketId" th:value="${ticketObj.id}">
+    <button id="backPageBtn" class="btn btn-primary" type="submit">Previous Page</button>
+</form>
+<!---->
 <form id="ticket5" th:action="@{/ticket5End}" method="post">
     <input hidden name="ticketId" th:value="${ticketObj.id}">
 
-    <button id="submitTicketBtn" class="btn btn-success" type="submit" value="Submit Ticket">Next Page
+    <button id="submitTicketBtn" class="btn btn-success" type="submit">Next Page
     </button>
 </form>
 <!---->
