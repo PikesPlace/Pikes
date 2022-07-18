@@ -70,5 +70,11 @@ public class UserController {
         return "redirect:/login";
     }
 
+    @GetMapping("/timeSheet")
+    public String timeSheet(Model model){
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        return "timeSheet";
+    }
+
 
 }
