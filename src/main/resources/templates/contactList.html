@@ -6,18 +6,18 @@
     <div th:replace="partials :: links"></div>
 </head>
 <body>
-<!---->
+<!--NAV PARTIAL-->
 <div th:replace="partials :: loggedNav"></div>
 <!---->
 <div>
     <p>Contact List</p>
 </div>
-<!---->
+<!--SEARCH FORM-->
 <form id="searchForm" th:action="@{/search}" method="post">
     <input id="searchInput" type="text" name="search" placeholder="Search by Business Name">
     <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Search</button>
 </form>
-<!---->
+<!--BUSINESS NAME CARDS-->
 <div>
     <h1 style="text-align: center" th:if="${businesses.size()} == 0" class="mb-5">No Results :(</h1>
     <div id="allBusinesses" class="row">
@@ -33,8 +33,9 @@
         </div>
     </div>
 </div>
-<!---->
+<!--BACK TO HOME ANCHOR-->
 <a th:href="@{/home}"><button class="btn btn-primary" type="button"></button></a>
+<!--SCRIPTS PARTIAL-->
 <div th:replace="partials :: scripts"></div>
 <!---->
 </body>

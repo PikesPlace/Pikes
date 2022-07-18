@@ -6,7 +6,7 @@
     <div th:replace="partials :: links"></div>
 </head>
 <body>
-<!---->
+<!--ADD USER FORM-->
 <h1>Add user</h1>
 <form id="adminAddUser" method="post" th:action="@{/adminAddUser}">
     <p>Add admin access ?
@@ -18,13 +18,13 @@
     <p>Password : <input required name="pass"></p>
     <button class="btn btn-success" type="submit">Make New User</button>
 </form>
-<!---->
+<!--ADD BUSINESS FORM-->
 <h1>Add Business</h1>
 <form id="adminAddBusiness" method="post" th:action="@{/adminAddBusiness}">
     <p>Business name : <input required name="name"></p>
     <button class="btn btn-success" type="submit">Make New Business</button>
 </form>
-<!---->
+<!--ADD LOCATION FORM-->
 <h1>Add Location</h1>
 <form id="adminAddLocation" method="post" th:action="@{/adminAddLocation}">
     <p>Name : <input required name="name"></p>
@@ -41,7 +41,7 @@
     </div>
     <button class="btn btn-success" type="submit">Make New Location</button>
 </form>
-<!---->
+<!--SCRIPT PARTIAL-->
 <div th:replace="partials :: scripts"></div>
 <!---->
 </body>

@@ -6,28 +6,28 @@
     <div th:replace="partials :: links"></div>
 </head>
 <body>
-<!---->
+<!--NAV PARTIAL-->
 <div th:replace="partials :: loggedNav"></div>
 <!---->
 <h2>Section 7</h2>
-<!---->
-<form id="backToTicket6" th:action="@{/backToTicket6}" method="post">
-    <input hidden name="ticketId" th:value="${ticketObj.id}">
-    <button id="backPageBtn" class="btn btn-primary" type="submit">Previous Page</button>
-</form>
-<!---->
+<!--PAGE 7 FORM-->
 <form id="ticket7" th:action="@{/ticket7End}" method="post">
     <input hidden name="ticketId" th:value="${ticketObj.id}">
 
     <button id="submitTicketBtn" class="btn btn-success" type="submit">Next Page
     </button>
 </form>
-<!---->
+<!--PREVIOUS PAGE FORM-->
+<form id="backToTicket6" th:action="@{/backToTicket6}" method="post">
+    <input hidden name="ticketId" th:value="${ticketObj.id}">
+    <button id="backPageBtn" class="btn btn-primary" type="submit">Previous Page</button>
+</form>
+<!--CANCEL TICKET FORM-->
 <form th:action="@{/cancelTicket}" method="post">
     <input hidden th:value="${ticketObj.id}">
     <button class="btn btn-danger" type="submit">Cancel Ticket</button>
 </form>
-<!---->
+<!--SCRIPTS PARTIAL-->
 <div th:replace="partials :: scripts"></div>
 <!---->
 </body>

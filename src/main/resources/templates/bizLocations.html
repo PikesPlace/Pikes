@@ -6,9 +6,9 @@
     <div th:replace="partials :: links"></div>
 </head>
 <body>
-<!---->
+<!--NAV PARTIAL-->
 <div th:replace="partials :: loggedNav"></div>
-<!---->
+<!--ALL LOCATIONS-->
 <div th:each="location : ${locations}">
     <p>Location Name: <span th:text="${location.name}"></span></p>
     <p>Email: <span th:text="${location.email}"></span></p>
@@ -19,9 +19,9 @@
     <p>Zip: <span th:text="${location.zip}"></span></p>
     <hr>
 </div>
-<!---->
+<!--BACK TO CONTACTS ANCHOR-->
 <a href="/contactList"><button class="btn btn-primary" type="button">Back to Contact List</button></a>
-<!---->
+<!--SCRIPTS PARTIAL-->
 <div th:replace="partials :: scripts"></div>
 <!---->
 </body>

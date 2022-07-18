@@ -6,9 +6,9 @@
     <div th:replace="partials :: links"></div>
 </head>
 <body>
-<!---->
+<!--ADD PAGE ANCHOR-->
 <a href="/adminAdd">Add more Page</a>
-<!---->
+<!--SHOW ALL TICKETS-->
 <h1>Tickets</h1>
 <div th:each="ticket : ${tickets}">
     <p>ID = <span th:text="${ticket.id}"></span></p>
@@ -23,18 +23,16 @@
     <p>User = <span th:text="${ticket.user}"></span></p>
     <br>
 </div>
-<!---->
 <hr>
-<!---->
+<!--SHOW ALL BUSINESSES-->
 <h1>Business</h1>
 <div th:each="business : ${businesses}">
     <p>Business ID = <span th:text="${business.id}"></span></p>
     <p>Business Name = <span th:text="${business.name}"></span></p>
     <br>
 </div>
-<!---->
 <hr>
-<!---->
+<!--SHOW ALL LOCATIONS-->
 <h1>Locations</h1>
 <div th:each="location : ${locations}">
     <p>Location ID = <span th:text="${location.id}"></span></p>
@@ -43,9 +41,8 @@
     <p>Email = <span th:text="${location.email}"></span></p>
     <br>
 </div>
-<!---->
 <hr>
-<!---->
+<!--SHOW ALL USERS-->
 <h1>Users</h1>
 <div th:each="user : ${users}">
     <p>User ID = <span th:text="${user.id}"></span></p>
@@ -53,7 +50,7 @@
     <p>Email = <span th:text="${user.email}"></span></p>
     <br>
 </div>
-<!---->
+<!--SCRIPTS PARTIAL-->
 <div th:replace="partials :: scripts"></div>
 <!---->
 </body>

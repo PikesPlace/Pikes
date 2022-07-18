@@ -6,9 +6,9 @@
     <div th:replace="partials :: links"></div>
 </head>
 <body>
-<!---->
+<!--NAV PARTIAL-->
 <div th:replace="partials :: loggedNav"></div>
-<!---->
+<!--PAGE 1 FORM-->
 <form id="ticketStart" th:action="@{/ticketStart}" method="post" th:object="${ticketObj}">
     <input hidden name="user" th:value="${user.id}">
     <p>Select Location:</p>
@@ -21,18 +21,18 @@
         <input name="type" type="checkbox" th:text="${type.name}" th:value="${type.name}">
     </div>
     <br>
-    <p>Enter Phone Num:<input required name="phoneNum" th:text="${ti}" th:value="${phoneNum}"></p>
+    <p>Enter Phone Num:<input required name="phoneNum" th:value="${phoneNum}"></p>
     <p>Enter Today's Date:<input required type="date" name="date" th:value="${date}"></p>
     <p>Enter Ordered Date:<input required type="date" name="dateOrdered" th:value="${dateOrdered}"></p>
     <p>Enter Scheduked Date:<input required type="date" name="dateScheduled" th:value="${dateScheduled}"></p>
     <button id="submitTicketBtn" class="btn btn-success" type="submit">Next Page
     </button>
 </form>
-<!---->
+<!--CANCEL TICKET FORM-->
 <a th:href="@{/home}">
     <button class="btn btn-danger" type="button">Cancel Ticket</button>
 </a>
-<!---->
+<!--SCRIPTS PARTIAL-->
 <div th:replace="partials :: scripts"></div>
 <!---->
 </body>

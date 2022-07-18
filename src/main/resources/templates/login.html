@@ -6,7 +6,7 @@
     <div th:replace="partials :: links"></div>
 </head>
 <body>
-<!---->
+<!--LOGIN FORM-->
 <form th:action="@{/login}" method="post">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username">
@@ -18,7 +18,7 @@
         <button class="btn btn-success" type="submit" value="Login">Login</button>
     </div>
 </form>
-<!---->
+<!--SCRIPTS PARTIAL-->
 <div th:replace="partials :: scripts"></div>
 <!---->
 </body>
