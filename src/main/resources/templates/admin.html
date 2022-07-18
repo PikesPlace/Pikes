@@ -6,8 +6,9 @@
     <div th:replace="partials :: links"></div>
 </head>
 <body>
+<a th:href="@{/home}"><button class="btn btn-danger">Back to Home</button></a>
 <!--ADD PAGE ANCHOR-->
-<a href="/adminAdd">Add more Page</a>
+<a th:href="@{/adminAdd}"><button class="btn btn-danger">Add More Page</button></a>
 <!--SHOW ALL TICKETS-->
 <h1>Tickets</h1>
 <div th:each="ticket : ${tickets}">

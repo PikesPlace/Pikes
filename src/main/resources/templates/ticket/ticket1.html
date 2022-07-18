@@ -13,7 +13,7 @@
     <input hidden name="user" th:value="${user.id}">
     <p>Select Location:</p>
     <div th:each="location : ${locations}">
-        <input type="checkbox" name="loc" th:text="${location.name}" th:value="${location.name}">
+        <input name="loc" type="checkbox" th:text="${location.name}" th:value="${location.name}">
     </div>
     <br>
     <p>Select ticket type:</p>

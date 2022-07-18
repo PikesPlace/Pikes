@@ -6,6 +6,7 @@
     <div th:replace="partials :: links"></div>
 </head>
 <body>
+<a th:href="@{/admin}"><button class="btn btn-danger">Back To Admin Page</button></a>
 <!--ADD USER FORM-->
 <h1>Add user</h1>
 <form id="adminAddUser" method="post" th:action="@{/adminAddUser}">
