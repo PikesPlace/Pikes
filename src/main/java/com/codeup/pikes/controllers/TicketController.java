@@ -117,6 +117,12 @@ public class TicketController {
         return "redirect:/ticket4/" + ticket.getId();
     }
 
+    @PostMapping("/backToTicket2")
+    public String backToTicket2(@RequestParam("ticketId") Long id){
+        Ticket ticket = ticketDao.getById(id);
+        return "redirect:/ticket2/" + ticket.getId();
+    }
+
     //    Page 4
     @GetMapping("/ticket4/{id}")
     public String ticket4(Model model, @PathVariable Long id) {
@@ -131,6 +137,12 @@ public class TicketController {
 
         ticketDao.save(ticket);
         return "redirect:/ticket5/" + ticket.getId();
+    }
+
+    @PostMapping("/backToTicket3")
+    public String backToTicket3(@RequestParam("ticketId") Long id){
+        Ticket ticket = ticketDao.getById(id);
+        return "redirect:/ticket3/" + ticket.getId();
     }
 
     //    Page 5
@@ -149,6 +161,12 @@ public class TicketController {
         return "redirect:/ticket6/" + ticket.getId();
     }
 
+    @PostMapping("/backToTicket4")
+    public String backToTicket4(@RequestParam("ticketId") Long id){
+        Ticket ticket = ticketDao.getById(id);
+        return "redirect:/ticket4/" + ticket.getId();
+    }
+
     //    Page 6
     @GetMapping("/ticket6/{id}")
     public String ticket6(Model model, @PathVariable Long id) {
@@ -163,6 +181,12 @@ public class TicketController {
 
         ticketDao.save(ticket);
         return "redirect:/ticket7/" + ticket.getId();
+    }
+
+    @PostMapping("/backToTicket5")
+    public String backToTicket5(@RequestParam("ticketId") Long id){
+        Ticket ticket = ticketDao.getById(id);
+        return "redirect:/ticket5/" + ticket.getId();
     }
 
     //    Page 7
@@ -181,6 +205,12 @@ public class TicketController {
         return "redirect:/ticket8/" + ticket.getId();
     }
 
+    @PostMapping("/backToTicket6")
+    public String backToTicket6(@RequestParam("ticketId") Long id){
+        Ticket ticket = ticketDao.getById(id);
+        return "redirect:/ticket6/" + ticket.getId();
+    }
+
     //    Page 8
     @GetMapping("/ticket8/{id}")
     public String ticket8(Model model, @PathVariable Long id) {
@@ -197,6 +227,12 @@ public class TicketController {
         return "redirect:/ticket9/" + ticket.getId();
     }
 
+    @PostMapping("/backToTicket7")
+    public String backToTicket7(@RequestParam("ticketId") Long id){
+        Ticket ticket = ticketDao.getById(id);
+        return "redirect:/ticket7/" + ticket.getId();
+    }
+
     //    Page 9
     @GetMapping("/ticket9/{id}")
     public String ticket9(Model model, @PathVariable Long id) {
@@ -210,6 +246,12 @@ public class TicketController {
         Ticket ticket = ticketDao.getById(id);
         ticketDao.save(ticket);
         return "redirect:/home";
+    }
+
+    @PostMapping("/backToTicket8")
+    public String backToTicket8(@RequestParam("ticketId") Long id){
+        Ticket ticket = ticketDao.getById(id);
+        return "redirect:/ticket8/" + ticket.getId();
     }
 
 
