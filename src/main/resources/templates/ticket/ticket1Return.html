@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket 1</title>
+    <div th:replace="partials :: links"></div>
+</head>
+<body>
+<!---->
+<div th:replace="partials :: loggedNav"></div>
+<!---->
+<form id="ticketStart" th:action="@{/ticketReturn}" method="post" th:object="${ticketObj}">
+    <input hidden name="ticketId" th:value="${ticketObj.id}">
+    <input hidden name="user" th:value="${user.id}">
+    <p>Select Location:</p>
+    <div th:each="location : ${locations}">
+        <input type="checkbox" name="loc" th:text="${location.name}" th:value="${location.name}">
+    </div>
+    <br>
+    <p>Select ticket type:</p>
+    <div th:each="type : ${types}">
+        <input name="type" type="checkbox" th:text="${type.name}" th:value="${type.name}">
+    </div>
+    <br>
+    <p>Enter Phone Num:<input required name="phoneNum" th:value="${ticketObj.phoneNum}"></p>
+    <p>Enter Today's Date:<input required type="date" name="date" th:value="${ticketObj.date}"></p>
+    <p>Enter Ordered Date:<input required type="date" name="dateOrdered" th:value="${ticketObj.dateOrdered}"></p>
+    <p>Enter Scheduled Date:<input required type="date" name="dateScheduled" th:value="${ticketObj.dateScheduled}"></p>
+    <button id="submitTicketBtn" class="btn btn-success" type="submit">Next Page
+    </button>
+</form>
+<!---->
+<a th:href="@{/home}">
+    <button class="btn btn-danger" type="button">Cancel Ticket</button>
+</a>
+<!---->
+<div th:replace="partials :: scripts"></div>
+<!---->
+</body>
+</html>
