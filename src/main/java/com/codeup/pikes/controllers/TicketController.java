@@ -6,6 +6,7 @@ import com.codeup.pikes.models.Ticket;
 import com.codeup.pikes.models.User;
 import com.codeup.pikes.repositories.*;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +44,30 @@ public class TicketController {
         return "ticket/ticket1";
     }
 
+    @GetMapping("/ticket1/{id}")
+    public String backToTicket(Model model, @PathVariable Long id){
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        model.addAttribute("locations", locationDao.findAll());
+        model.addAttribute("types", jobTypeDao.findAll());
+        model.addAttribute("ticketObj", ticketDao.getById(id));
+        return "ticket/ticket1Return";
+    }
+
+    @PostMapping("/ticketReturn")
+    public String ticketReturn(@RequestParam("ticketId") Long ticketId, @RequestParam("loc") String location, @RequestParam("type") String type, @RequestParam("user") Long id, @RequestParam("phoneNum") String phoneNum, @RequestParam ("date") String date, @RequestParam ("dateOrdered") String dateOrdered, @RequestParam ("dateScheduled") String dateScheduled){
+        Ticket ticket = ticketDao.getById(ticketId);
+        ticket.setLocation(locationDao.findByName(location));
+        ticket.setBusiness(locationDao.findByName(location).getBusiness());
+        ticket.setType(type);
+        ticket.setUser(userDao.getById(id));
+        ticket.setPhoneNum(phoneNum);
+        ticket.setDate(date);
+        ticket.setDateOrdered(dateOrdered);
+        ticket.setDateScheduled(dateScheduled);
+        ticketDao.save(ticket);
+        return "redirect:/ticket2/" + ticket.getId();
+    }
+
     @PostMapping("/ticketStart")
     public String ticketStart(@ModelAttribute Ticket ticket, @RequestParam("loc") String location, @RequestParam("type") String type, @RequestParam("user") Long id) {
         ticket.setLocation(locationDao.findByName(location));
@@ -68,6 +93,12 @@ public class TicketController {
 
         ticketDao.save(ticket);
         return "redirect:/ticket3/" + ticket.getId();
+    }
+
+    @PostMapping("/backToTicket1")
+    public String backToTicket1(@RequestParam("ticketId") Long id){
+        Ticket ticket = ticketDao.getById(id);
+        return "redirect:/ticket1/" + ticket.getId();
     }
 
     //    Page 3
