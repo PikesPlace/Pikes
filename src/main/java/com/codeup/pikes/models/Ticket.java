@@ -38,7 +38,6 @@ public class Ticket {
     private String type;
 
 
-
     public Ticket(){}
 
     public long getId() {

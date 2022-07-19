@@ -90,7 +90,6 @@ public class TicketController {
     @PostMapping("/ticket2End")
     public String ticket2End(@RequestParam("ticketId") Long id){
         Ticket ticket = ticketDao.getById(id);
-
         ticketDao.save(ticket);
         return "redirect:/ticket3/" + ticket.getId();
     }
@@ -112,7 +111,6 @@ public class TicketController {
     @PostMapping("/ticket3End")
     public String ticket3End(@RequestParam("ticketId") Long id){
         Ticket ticket = ticketDao.getById(id);
-
         ticketDao.save(ticket);
         return "redirect:/ticket4/" + ticket.getId();
     }
@@ -134,7 +132,6 @@ public class TicketController {
     @PostMapping("/ticket4End")
     public String ticket4End(@RequestParam("ticketId") Long id){
         Ticket ticket = ticketDao.getById(id);
-
         ticketDao.save(ticket);
         return "redirect:/ticket5/" + ticket.getId();
     }
@@ -156,7 +153,6 @@ public class TicketController {
     @PostMapping("/ticket5End")
     public String ticket5End(@RequestParam("ticketId") Long id){
         Ticket ticket = ticketDao.getById(id);
-
         ticketDao.save(ticket);
         return "redirect:/ticket6/" + ticket.getId();
     }
@@ -178,7 +174,6 @@ public class TicketController {
     @PostMapping("/ticket6End")
     public String ticket6End(@RequestParam("ticketId") Long id){
         Ticket ticket = ticketDao.getById(id);
-
         ticketDao.save(ticket);
         return "redirect:/ticket7/" + ticket.getId();
     }
@@ -200,7 +195,6 @@ public class TicketController {
     @PostMapping("/ticket7End")
     public String ticket7End(@RequestParam("ticketId") Long id){
         Ticket ticket = ticketDao.getById(id);
-
         ticketDao.save(ticket);
         return "redirect:/ticket8/" + ticket.getId();
     }
@@ -222,7 +216,6 @@ public class TicketController {
     @PostMapping("/ticket8End")
     public String ticket8End(@RequestParam("ticketId") Long id){
         Ticket ticket = ticketDao.getById(id);
-
         ticketDao.save(ticket);
         return "redirect:/ticket9/" + ticket.getId();
     }

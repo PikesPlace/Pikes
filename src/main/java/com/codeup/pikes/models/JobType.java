@@ -14,9 +14,6 @@ public class JobType {
     @Column
     private String name;
 
-//    @ManyToMany(mappedBy = "jobTypes")
-//    private List<Ticket> ticketJobType;
-
     public JobType (){};
 
     public JobType (long id, String name){
@@ -39,12 +36,5 @@ public class JobType {
     public void setName(String name) {
         this.name = name;
     }
-//
-//    public List<Ticket> getTicketJobType() {
-//        return ticketJobType;
-//    }
-//
-//    public void setTicketJobType(List<Ticket> ticketJobType) {
-//        this.ticketJobType = ticketJobType;
-//    }
+
 }

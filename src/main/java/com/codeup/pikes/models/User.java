@@ -22,7 +22,7 @@ public class User {
     @Column(nullable = false)
     private boolean admin;
 
-    @Column(nullable = true)
+    @Column
     private String profPic;
 
 

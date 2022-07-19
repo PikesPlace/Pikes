@@ -8,9 +8,21 @@
 <body>
 <!--NAV PARTIAL-->
 <div th:replace="partials :: loggedNav"></div>
-<!---->
+<!--CLOCK IN FORM-->
 <h1>Time Sheet Page?</h1>
-
+<form th:action="@{/clockIn}" method="post">
+    <input hidden name="userId" th:value="${user.id}">
+    <input hidden name="currentDate" th:value="${#dates.format(#dates.createNow(), 'dd MMM yyyy')}">
+    <input hidden name="currentTime" th:value="${#dates.format(#dates.createNow(), 'HH:mm:ss')}">
+    <button class="btn btn-success" type="submit">Clock In</button>
+</form>
+<!--CLOCK OUT FORM-->
+<form th:action="@{/clockOut}" method="post">
+    <input hidden name="userId" th:value="${user.id}">
+    <input hidden name="currentDate" th:value="${#dates.format(#dates.createNow(), 'dd MMM yyyy')}">
+    <input hidden name="currentTime" th:value="${#dates.format(#dates.createNow(), 'HH:mm:ss')}">
+    <button class="btn btn-danger" type="submit">Clock Out</button>
+</form>
 <!--SCRIPTS PARTIAL-->
 <div th:replace="partials :: scripts"></div>
 <!---->
