@@ -98,7 +98,8 @@ public class UserController {
     @PostMapping("/clockOut")
     public String clockOut(@RequestParam("userId") Long id, @RequestParam("currentDate") Date currentDate, @RequestParam("currentTime") Time currentTime){
         TimeSheet timeSheet = timeDao.timeSheetFind(id, currentDate);
-        timeSheet.setEndTime(currentTime);
+        timeSheet.setTimeOut(currentTime);
+        timeDao.save(timeSheet);
         return "redirect:/home";
     }
 

@@ -3,5 +3,6 @@ Find why I can't list Business/Location/User names on admin.html
 
 TimeSheet - how to get back to specific column for clockOut form........
 Query where User_id && currentDate = user.id && timeSheet.currentDate ??
-then set time
-out to current time when clock out form is submitted
+then set timeout to current time when clock out form is submitted
+
+Clock out method gets 500 Error ?!?!?!?!?!

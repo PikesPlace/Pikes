@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface TimeSheetRepository extends JpaRepository<TimeSheet, Long> {
 
-    @Query(value = "SELECT * FROM time_sheets WHERE time_sheets.user_id = ? && time_sheets.this_date LIKE CONCAT('%', ?1, '%')", nativeQuery = true)
+    @Query(value = "SELECT * FROM time_sheets WHERE time_sheets.user_id = ? && time_sheets.this_date LIKE CONCAT('%', ?, '%')", nativeQuery = true)
     TimeSheet timeSheetFind(Long id, Date currentDate);
 }
