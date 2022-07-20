@@ -6,3 +6,5 @@ Query where User_id && currentDate = user.id && timeSheet.currentDate ??
 then set timeout to current time when clock out form is submitted
 
 Clock out method gets 500 Error ?!?!?!?!?!
+Check mapping
+
