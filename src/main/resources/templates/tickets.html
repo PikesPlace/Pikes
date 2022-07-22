@@ -7,51 +7,71 @@
     <link rel="stylesheet" th:href="@{/ticketsTemplate.css}">
 </head>
 <body>
-
+<a th:href="@{/admin}">
+    <button class="btn btn-danger">Back to Admin Page</button>
+</a>
 <h1>Tickets</h1>
-<div th:each="ticket : ${tickets}">
-    <p>ID = <span th:text="${ticket.id}"></span></p>
-    <p>Date = <span th:text="${ticket.date}"></span></p>
-    <p>Ordered Date = <span th:text="${ticket.dateOrdered}"></span></p>
-    <p>Scheduled Date = <span th:text="${ticket.dateScheduled}"></span></p>
-    <p>Phone = <span th:text="${ticket.phoneNum}"></span></p>
-    <p>Ticket Num = <span th:text="${ticket.ticketNum}"></span></p>
-    <p>Ticket Type = <span th:text="${ticket.type}"></span></p>
-    <p>Business Name = <span th:text="${ticket.business}"></span></p>
-    <p>Ticket Location Name = <span th:text="${ticket.location}"></span></p>
-    <p>User = <span th:text="${ticket.user}"></span></p>
-    <br>
-</div>
 <hr>
-
-<div th:each="ticket : ${tickets}" class="container">
-    <div id="topLeft">
-        <div>
-            <p>Pike's Peak Performance</p>
-            <p>922 Gardner Drive</p>
-            <p>Perry, GA 31069</p>
-            <p>(478)987-5547</p>
+<div th:each="ticket : ${tickets}" id="ticket">
+    <div id="top">
+        <div id="topLeft">
+            <div>
+                <p>Pike's Peak Performance<br> 922 Gardner Drive<br> Perry, GA 31069<br> (478)987-5547</p>
+            </div>
+        </div>
+        <div id="topRight">
+            <div id="rightTop">
+                <h1>INVOICE</h1>
+            </div>
+            <div id="rightBottom">
+                <table>
+                    <tr>
+                        <th>Service Date</th>
+                        <th>Number</th>
+                        <th>Due</th>
+                    </tr>
+                    <tr>
+                        <td th:text="${ticket.date}"></td>
+                        <td th:if="${ticket.ticketNum != null}" th:text="${ticket.ticketNum}"></td>
+                        <td th:if="${ticket.ticketNum == null}" th:text="${NotAvail}"></td>
+                        <td>??</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
-    <div id="topRight">
-        <div id="rightTop">
-            <p>INVOICE</p>
-        </div>
-        <div id="rightBottom">
-            <table>
-                <tr>
-                    <th>Service Date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-                    <th>Number &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-                    <th>Due</th>
-                </tr>
-                <tr>
-                    <td th:text="${ticket.date}"></td>
-                    <td th:if="${ticket.ticketNum != null}" th:text="${ticket.ticketNum}"></td>
-                    <td th:if="${ticket.ticketNum == null}" th:text="${NotAvail}"></td>
-                    <td>??</td>
-                </tr>
-            </table>
-        </div>
+
+    <div id="middle">
+        <table>
+            <tr>
+                <th>Customer</th>
+                <th>Project/Job</th>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <span th:text="${ticket.business.name}"></span>
+                        <br>
+                        <span th:text="${ticket.business.street}"></span>
+                        <br>
+                        <span th:text="${ticket.business.city}"></span>,
+                        <span th:text="${ticket.business.state}"></span>
+                        <span th:text="${ticket.business.zip}"></span>
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        <span th:text="${ticket.location.name}"></span>
+                        <br>
+                        <span th:text="${ticket.location.street}"></span>
+                        <br>
+                        <span th:text="${ticket.location.city}"></span>,
+                        <span th:text="${ticket.location.state}"></span>
+                        <span th:text="${ticket.location.zip}"></span>
+                    </p>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
 
