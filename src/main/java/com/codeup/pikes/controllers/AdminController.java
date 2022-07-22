@@ -9,10 +9,7 @@ import com.codeup.pikes.repositories.TicketRepository;
 import com.codeup.pikes.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class AdminController {
@@ -78,5 +75,11 @@ public class AdminController {
         location.setZip(zip);
         locationDao.save(location);
         return "redirect:/admin";
+    }
+
+    @GetMapping("/tickets")
+    public String getAllTickets(Model model){
+        model.addAttribute("tickets", ticketDao.findAll());
+        return "tickets";
     }
 }
