@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets</title>
+    <div th:replace="partials :: links"></div>
+</head>
+<body>
+
+<h1>Tickets</h1>
+<div th:each="ticket : ${tickets}">
+    <p>ID = <span th:text="${ticket.id}"></span></p>
+    <p>Date = <span th:text="${ticket.date}"></span></p>
+    <p>Ordered Date = <span th:text="${ticket.dateOrdered}"></span></p>
+    <p>Scheduled Date = <span th:text="${ticket.dateScheduled}"></span></p>
+    <p>Phone = <span th:text="${ticket.phoneNum}"></span></p>
+    <p>Ticket Num = <span th:text="${ticket.ticketNum}"></span></p>
+    <p>Ticket Type = <span th:text="${ticket.type}"></span></p>
+    <p>Business Name = <span th:text="${ticket.business}"></span></p>
+    <p>Ticket Location Name = <span th:text="${ticket.location}"></span></p>
+    <p>User = <span th:text="${ticket.user}"></span></p>
+    <br>
+</div>
+<hr>
+
+
+<!--SCRIPTS PARTIAL-->
+<div th:replace="partials :: scripts"></div>
+<!---->
+</body>
+</html>
