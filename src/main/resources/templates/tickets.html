@@ -4,6 +4,7 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tickets</title>
     <div th:replace="partials :: links"></div>
+    <link rel="stylesheet" th:href="@{/ticketsTemplate.css}">
 </head>
 <body>
 
@@ -22,6 +23,37 @@
     <br>
 </div>
 <hr>
+
+<div th:each="ticket : ${tickets}" class="container">
+    <div id="topLeft">
+        <div>
+            <p>Pike's Peak Performance</p>
+            <p>922 Gardner Drive</p>
+            <p>Perry, GA 31069</p>
+            <p>(478)987-5547</p>
+        </div>
+    </div>
+    <div id="topRight">
+        <div id="rightTop">
+            <p>INVOICE</p>
+        </div>
+        <div id="rightBottom">
+            <table>
+                <tr>
+                    <th>Service Date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                    <th>Number &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                    <th>Due</th>
+                </tr>
+                <tr>
+                    <td th:text="${ticket.date}"></td>
+                    <td th:if="${ticket.ticketNum != null}" th:text="${ticket.ticketNum}"></td>
+                    <td th:if="${ticket.ticketNum == null}" th:text="${NotAvail}"></td>
+                    <td>??</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
 
 
 <!--SCRIPTS PARTIAL-->

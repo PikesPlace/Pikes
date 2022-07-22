@@ -80,6 +80,7 @@ public class AdminController {
     @GetMapping("/tickets")
     public String getAllTickets(Model model){
         model.addAttribute("tickets", ticketDao.findAll());
+        model.addAttribute("NotAvail", "N/A");
         return "tickets";
     }
 }
