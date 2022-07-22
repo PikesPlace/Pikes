@@ -1,3 +1,43 @@
-tr{
-    background-color: red;
+#ticket{
+    background-color: white;
+}
+
+#top{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 25px;
+    background: white;
+}
+#rightTop{
+    text-align: right;
+}
+#rightBottom th{
+    text-align: center;
+    text-decoration: underline;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+#rightBottom td{
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#middle{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 25px;
+}
+#middle th{
+    text-align: center;
+    text-decoration: underline;
+    padding-right: 275px;
+    padding-left: 275px;
+}
+#middle td{
+    text-align: left;
+    padding-right: 275px;
+    padding-left: 275px;
 }
