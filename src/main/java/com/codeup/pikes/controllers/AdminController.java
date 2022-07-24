@@ -7,6 +7,7 @@ import com.codeup.pikes.repositories.BusinessRepository;
 import com.codeup.pikes.repositories.LocationRepository;
 import com.codeup.pikes.repositories.TicketRepository;
 import com.codeup.pikes.repositories.UserRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -81,6 +82,18 @@ public class AdminController {
     public String getAllTickets(Model model){
         model.addAttribute("tickets", ticketDao.findAll());
         model.addAttribute("NotAvail", "N/A");
+        return "tickets";
+    }
+
+    @PostMapping("/ticketSearch")
+    public String ticketSearch(Model model, @RequestParam(name = "search") Long search) {
+        model.addAttribute("tickets", ticketDao.searchTickets(search));
+        return "tickets";
+    }
+
+    @PostMapping("/seeAllTickets")
+    public String seeAllTickets(Model model){
+        model.addAttribute("tickets", ticketDao.findAll());
         return "tickets";
     }
 }
