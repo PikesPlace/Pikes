@@ -11,6 +11,13 @@
     <button class="btn btn-danger">Back to Admin Page</button>
 </a>
 <h1>Tickets</h1>
+<form id="searchForm" th:action="@{/ticketSearch}" method="post">
+    <input id="searchInput" type="text" name="search" placeholder="Search by Ticket Number">
+    <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i>Search</button>
+</form>
+<form th:action="@{/seeAllTickets}" method="post">
+    <button type="submit" class="btn btn-warning"><i class="bi bi-search"></i>See All</button>
+</form>
 <hr>
 <div th:each="ticket : ${tickets}" id="ticket">
     <div id="top">
