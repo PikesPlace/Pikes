@@ -31,7 +31,7 @@ public class BusinessController {
         return "/contactList";
     }
 
-    @PostMapping("/search")
+    @PostMapping("/businessSearch")
     public String searchIndex(Model model, @RequestParam(name = "search") String search) {
         model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("businesses", businessDao.searchBusinesses(search));
