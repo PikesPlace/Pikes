@@ -91,9 +91,4 @@ public class AdminController {
         return "tickets";
     }
 
-    @PostMapping("/seeAllTickets")
-    public String seeAllTickets(Model model){
-        model.addAttribute("tickets", ticketDao.findAll());
-        return "tickets";
-    }
 }
