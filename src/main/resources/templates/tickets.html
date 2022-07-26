@@ -15,9 +15,7 @@
     <input id="searchInput" type="text" name="search" placeholder="Search by Ticket Number">
     <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i>Search</button>
 </form>
-<form th:action="@{/seeAllTickets}" method="post">
-    <button type="submit" class="btn btn-warning"><i class="bi bi-search"></i>See All</button>
-</form>
+<a th:href="@{/tickets}"><button type="submit" class="btn btn-warning"><i class="bi bi-search"></i>See All</button></a>
 <hr>
 <div th:each="ticket : ${tickets}" id="ticket">
     <div id="top">
