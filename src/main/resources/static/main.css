@@ -7,3 +7,41 @@ a{
 #loggedNav{
     background-color: red;
 }
+
+/*  INDEX PAGE  */
+#indexLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#indexLogo img{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 2px solid black;
+    box-shadow: black 0 0 100px 10px;
+}
+#login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#login button{
+    margin: 20px;
+    width: 100px;
+    height: 40px;
+    border: 2px solid black;
+}
+/*  END   */
+
+
+
+/*  LOGIN PAGE  */
+#loginForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
